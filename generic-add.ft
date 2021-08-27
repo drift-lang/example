@@ -1,0 +1,21 @@
+use <-std
+
+def Foo
+    def <T int | string>(a, b T) add -> T
+        println(a, b, type(a), type(b))
+        ret a + b
+
+    def <T int>(x []T) sum -> int
+        def p int = 0
+        def i int = 0
+
+        aop i < len(x)
+            p += x[i]
+            i += 1
+        ret p
+
+def f Foo = new Foo{}
+def x int = 6
+println(
+    f.add(4, x), f.add("x", "y"))
+println(f.sum([2, 4, 6]))

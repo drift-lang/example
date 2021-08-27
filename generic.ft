@@ -1,0 +1,31 @@
+use <-std
+
+def About<T>
+    \\ initialize -> {}<string, any>
+    \T\ say -> T
+
+def Me<T any>
+    def name string = "bingxio"
+    def age T = nil
+    def location string = "China, CQ"
+    
+    def () initialize -> {}<string, any>
+        def m {}<string, any> = {
+            "name"     : .name,
+            "age"      : .age,
+            "location" : .location
+        }
+        ret m
+        
+    def <T string | int, R any>(w T, m <-R) say -> T
+        println(.name, "say: ", w, m)
+        if type(w) == "string"
+            w = "use drift script."
+        ret w
+        
+def me About = new Me{age: 20}
+
+def a T = me.say("Hi!", "Nice to meet you.")
+def b T = me.say(666, "GOOD", "OK!", 88, 5.)
+
+putline("", me.initialize(), a, b)

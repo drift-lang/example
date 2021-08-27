@@ -1,0 +1,17 @@
+use <-std
+def Foo
+    def x int = 10
+    def () call #4
+        println("CALL FOO", .x) #5
+def Bar
+    def x int = 20
+    def () call #2
+        def f Foo = new Foo{}
+        f.call() #3,6
+        println("CALL BAR", .x) #7
+def b Bar = new Bar{}
+b.call() #1,8
+b.x
+#   v             v
+# 1.G > BCALL > 2.CF > (E)
+#         ^p           <-
