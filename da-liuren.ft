@@ -1,0 +1,27 @@
+use <-std
+use list
+
+def eb []string = [
+    "子", "丑", "寅", "卯", "辰", "巳",
+    "午", "未", "申", "酉", "戌", "亥"
+]
+
+def (x string) indexOf -> int
+    for def i int = 0; i < len(eb); i += 1
+        if eb[i] == x
+            ret i
+    ret -1
+
+def (j, h string) pai -> []string
+    def p int = indexOf(j) + (12 - indexOf(h))
+    if p > 12
+        p = p - 12
+    def r []string = []
+    aop len(r) != 12
+        if p >= 12
+            p = 0
+        list.append(r, eb[p])
+        p += 1
+    ret r
+
+println(pai("巳", "卯"))
