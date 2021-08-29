@@ -7,7 +7,7 @@ def eb []string = [
 ]
 
 def (x string) indexOf -> int
-    for def i int = 0; i < len(eb); i += 1
+    for def i int = 0; i < len(eb); i = i + 1
         if eb[i] == x
             ret i
     ret -1
@@ -21,7 +21,7 @@ def (j, h string) pai -> []string
         if p >= 12
             p = 0
         list.append(r, eb[p])
-        p += 1
+        p = p + 1
     ret r
 
 println(pai("巳", "卯"))

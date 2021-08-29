@@ -10,8 +10,8 @@ def Foo
         def i int = 0
 
         aop i < len(x)
-            p += x[i]
-            i += 1
+            p = p + x[i]
+            i = i + 1
         ret p
 
 def f Foo = new Foo{}
