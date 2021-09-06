@@ -1,0 +1,20 @@
+use strconv
+
+println("猜数游戏，请输入 0 ~ 100 的整数")
+
+def num int = rand(0, 100)
+
+aop true
+    def u string = input()
+    def p int = strconv::to_int(u)
+
+    if p > num
+        println("大了")
+    ef p < num
+        println("小了")
+
+    if p == num
+        println("正确！")
+        out ->
+
+println("游戏结束。")
