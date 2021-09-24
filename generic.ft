@@ -1,5 +1,3 @@
-use <-std
-
 def About<T>
     \\ initialize -> {}<string, any>
     \T\ say -> T

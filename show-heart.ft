@@ -1,6 +1,3 @@
-use std
-use os
-
 def lit []string = [
     "&", "@", "#", "*", "$", "+", "%", "0"
 ]
@@ -17,9 +14,8 @@ def (p string) heart
         x = -1.5
         aop x < 1.5
             y = x * x + i * i - 1
-            if (y * y * y -
-                x * x * i * i * i) < 0
-                def r int = std.rand(0, std.len(lit))
+            if (y * y * y - x * x * i * i * i) < 0
+                def r int = rand(0, len(lit))
                 if r >= 3
                     s = s + lit[r]
                 nf
@@ -27,14 +23,14 @@ def (p string) heart
             nf
                 s = s + " "
             x = x + 0.05
-        std.println(s)
+        println(s)
         i = i - 0.1
 
 def () show
     for def i int = 0; i < 8; i = i + 1
         heart(lit[i])
-        os.sleep(1000)
-    std.println("
+        sleep(1000)
+    println("
     ❤   ❤
    ❤  +  ❤
     ❤   ❤

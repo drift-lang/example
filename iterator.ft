@@ -1,0 +1,10 @@
+def list []int = []
+
+for def i int = 0; i < 100; i = i + 1
+    if i % 4 == 0
+        append(list, i)
+
+println(list, len(list))
+for x <- list
+    print("x =", x)
+println()

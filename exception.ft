@@ -1,0 +1,16 @@
+p ->
+    println("thrown the p exception:", p, type(p))
+
+e ->
+    println("exception:", e, type(e))
+    p <- 404
+
+def (a, b int) add -> int
+    if a == 0 | b == 0
+        e <- "zero addition"
+    ret a + b
+
+def a int = add(3, 9)
+def b int = add(5, 0)
+
+println("a: ", a, "b: ", b)

@@ -1,5 +1,3 @@
-use <-std
-
 def Foo
     def <T int | string>(a, b T) add -> T
         println(a, b, type(a), type(b))
