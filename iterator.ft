@@ -1,10 +1,10 @@
 def list []int = []
-
-for def i int = 0; i < 100; i = i + 1
-    if i % 4 == 0
+def i int = 0
+aop i < 100
+    if i % 2 == 0
         append(list, i)
-
-println(list, len(list))
+    i = i + 1
+# println(list, "")
 for x <- list
-    print("x =", x)
+    print(x)
 println()
