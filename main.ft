@@ -1,0 +1,18 @@
+use error
+
+def Foo<T any>
+    def x T = nil
+
+    def (a, b int) add -> int
+        if a == 0 | b == 0
+            error::e <- "zero addition"
+        ret a + b
+
+    def () show -> T
+        println("T: ", type(.x), .x)
+        ret .x
+
+def a Foo = new Foo{x: 20}
+def b Foo = new Foo{x: "hello, world!"}
+
+println(a, b, a.add(3, 2), b.add(0, 4), a.show(), b.show())
